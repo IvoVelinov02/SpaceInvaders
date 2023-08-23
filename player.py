@@ -5,7 +5,7 @@ from laser import Laser
 class Player(pygame.sprite.Sprite):
     def __init__(self,pos,constraint,speed = 5):
         super().__init__()
-        self.image = pygame.image.load('/pictures/player.png').convert_alpha()
+        self.image = pygame.image.load('pictures/player.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom = pos)
         self.speed = speed
         self.max_x_constaint = constraint
@@ -14,7 +14,7 @@ class Player(pygame.sprite.Sprite):
         self.laser_cooldown = 600
           
         self.lasers = pygame.sprite.Group()
-        self.gunSound = pygame.mixer.Sound('/sound/Sci-Fi Laser Machine Gun Sound Effects.mp3')
+        self.gunSound = pygame.mixer.Sound('sound/Sci-Fi Laser Machine Gun Sound Effects.mp3')
        
         self.gunSound.set_volume(0.1)
     def get_input(self):

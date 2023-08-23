@@ -14,7 +14,7 @@ class Game:
         self.live_surd = pygame.image.load('pictures/player.png').convert_alpha()
         self.live_x_start_pos = screen_width - (self.live_surd.get_size()[0] * 2 + 7.5)
         self.score = 0
-        self.font = pygame.font.Font('/TTC/MarkerFelt.ttc', 45)
+        self.font = pygame.font.Font('TTC/MarkerFelt.ttc', 45)
         self.alien_speed_multiplier = 1.5 
         self.shape = obstacle.shape
         self.block_size = 6
@@ -31,18 +31,18 @@ class Game:
         self.extra = pygame.sprite.GroupSingle()
         self.extra_spawn_time = randint(455,935)
         self.backgrounds = [
-            pygame.image.load("/background/invaders.jpg"),
-            pygame.image.load("/background/4632ed00-ca92-11ea-971d-78aec0b072fa.png")
+            pygame.image.load("background/invaders.jpg"),
+            pygame.image.load("background/4632ed00-ca92-11ea-971d-78aec0b072fa.png")
         ]
         self.background_y = 0  
         self.background_speed = 1  
 
-        music = pygame.mixer.Sound('/sound/Dream Theater - The Alien (Official Video).mp3')
+        music = pygame.mixer.Sound('sound/Dream Theater - The Alien (Official Video).mp3')
         music.set_volume(0.2)
         music.play(loops= - 1) 
-        self.gunSound = pygame.mixer.Sound('/sound/Sci-Fi Laser Machine Gun Sound Effects.mp3')
+        self.gunSound = pygame.mixer.Sound('sound/Sci-Fi Laser Machine Gun Sound Effects.mp3')
         self.gunSound.set_volume(0.1)
-        self.boomSound = pygame.mixer.Sound('/sound/Small Bomb Explosion Sound Effect.mp3')
+        self.boomSound = pygame.mixer.Sound('sound/Small Bomb Explosion Sound Effect.mp3')
         self.boomSound.set_volume(0.3)
 
 
@@ -125,7 +125,7 @@ class Game:
         if self.alien_lasers:
             for laser in self.alien_lasers:
                 if pygame.sprite.spritecollide(laser,self.player,False):
-                    laser.klll()
+                    laser.kill()
                     self.lives -= 1
                     if self.lives <= 0:
                         pygame.quit()
